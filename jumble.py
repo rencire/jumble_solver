@@ -41,7 +41,7 @@ if __name__ == '__main__':
     parser.add_argument('-d', '--dictionary', help='Use a different dictionary file other than the default.  Dictionary file  must contain one word per line or else unexpected results might happen.')
     args = parser.parse_args()
     
-    file = './my_6of12_dict.txt'
+    file = './my_2of12_dict.txt'
     if args.dictionary:
         file = args.dictionary
 
