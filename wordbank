@@ -1,0 +1,31 @@
+def solve(word):
+    # generate english dictionary
+    eng_dict =  {'dog', 'god', 'go' }   
+    words = []
+    while word:
+        # for each permutation, check if its a word
+        permutations = permutations(word)
+        for w in permutations:
+            if w in eng_dict:
+                words.append(w)   
+        word = word[1:]
+
+    return words
+
+
+def permutations(str):
+    if len(str) == 1:
+       return set([str])
+               
+    result = set()
+    perms = permutations(str[1:])
+    for perm in perms:
+        for i in range(len(str)):
+            result.add(perm[:i] + str[0] + perm[i:])
+
+    return result
+        
+        
+       
+
+
